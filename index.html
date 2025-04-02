@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;550;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="start-quiz" id="quizStart" aria-label="Quiz introduction">
+      <div class="start-quiz-bubble" aria-label="Start the quiz">
+        <span>Start</span>
+        <span>The Quiz!</span>
+      </div>
+    </section>
+
+    <section class="quiz-container" id="quizContainer">
+      <ol class="question-progress">
+        <li class="number">1</li>
+        <li class="number">2</li>
+        <li class="number">3</li>
+        <li class="number">4</li>
+        <li class="number">5</li>
+        <li class="number">6</li>
+        <li class="number">7</li>
+        <li class="number">8</li>
+        <li class="number">9</li>
+        <li class="number">10</li>
+      </ol>
+
+      <div class="question">
+        An interface design application that runs in the browser with team-based
+        collaborative design projects
+      </div>
+
+      <form class="quiz-form" id="quizForm">
+        <input type="radio" id="answer1" name="quiz-answer" value="A" />
+        <label for="answer1" class="answer-el">Figma</label>
+
+        <input type="radio" id="answer2" name="quiz-answer" value="B" />
+        <label for="answer2" class="answer-el">Adobe XD</label>
+
+        <input type="radio" id="answer3" name="quiz-answer" value="C" />
+        <label for="answer3" class="answer-el">Sketch</label>
+
+        <input type="radio" id="answer4" name="quiz-answer" value="D" />
+        <label for="answer4" class="answer-el">InVision</label>
+
+        <button class="action">Submit</button>
+      </form>
+    </section>
+
+    <section class="quiz-results" id="quizResults">
+      <div class="quiz-end">
+        <p class="score">Your score is 9!</p>
+        <div class="restart-bubble" aria-label="Restart quiz">
+          <span>Start</span>
+          <span>Again</span>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script type="module" src="script.js"></script>
+</html>

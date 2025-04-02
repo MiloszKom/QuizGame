@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+button {
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* Start Quiz  */
+
+.start-quiz {
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-quiz-bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: min(80vw, 579px);
+  width: min(80vw, 579px);
+  font-size: min(10vw, 96px);
+  border-radius: 100%;
+  background-color: #26b6e3;
+  cursor: pointer;
+  box-shadow: 0 0 40px 0 #26b6e3;
+  text-align: center;
+}
+
+/* Quiz */
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 7.61vh;
+
+  display: none;
+}
+
+.question-progress {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 3.57vh 2.27vw;
+}
+
+.question-progress::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: #c9c9c9;
+}
+
+.number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 1px solid #c9c9c9;
+  color: #c9c9c9;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.number.current {
+  background-color: #26b6e3;
+  border-color: #26b6e3;
+  color: #fff;
+}
+
+.number.upcomming {
+  border-color: #26b6e3;
+  color: #26b6e3;
+}
+
+@media (min-width: 768px) {
+  .question-progress {
+    padding: 4.76vh 4.17vw;
+  }
+
+  .number {
+    width: 50px;
+    height: 50px;
+    border-width: 2px;
+    box-shadow: 0 3px 6px 0 gray;
+  }
+
+  .question-progress::after {
+    height: 2px;
+  }
+}
+
+.question {
+  padding: 40px 40px 50px;
+  background-color: #26b6e3;
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  letter-spacing: 0.1px;
+}
+
+@media (min-width: 768px) {
+  .question {
+    padding: 50px 130px 60px;
+    font-size: 2rem;
+  }
+}
+
+.quiz-form {
+  margin-top: 7.14vh;
+  display: grid;
+  row-gap: 2.38vh;
+  padding: 0px 8.13vw;
+}
+
+.quiz-form input {
+  display: none;
+}
+
+.answer-el {
+  width: 100%;
+  padding: 1.9vh 4.65vw;
+  border-radius: 0.5rem;
+  border: 1px solid #26b6e3;
+  color: #26b6e3;
+  font-weight: 500;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.answer-el.no-hover {
+  pointer-events: none;
+}
+
+.answer-el:hover {
+  background-color: lightblue;
+}
+
+input:checked + .answer-el {
+  background-color: #26b6e3;
+  color: #fff;
+}
+
+.answer-el.wrong {
+  background-color: rgba(217, 0, 0, 0.2);
+  color: rgba(217, 0, 0, 1);
+  border-color: rgba(217, 0, 0, 1);
+}
+
+.answer-el.correct {
+  background-color: rgba(0, 181, 18, 0.2);
+  color: rgba(0, 181, 18, 1);
+  border-color: rgba(0, 181, 18, 1);
+}
+
+@media (min-width: 768px) {
+  .quiz-form {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 4.76vh;
+    column-gap: 4.16vw;
+    padding: 0px 9vw;
+  }
+
+  .answer-el {
+    width: 100%;
+    padding: 3.57vh 1.38vw;
+    font-size: 1.5rem;
+  }
+}
+
+.action {
+  margin-top: 4.76vh;
+  text-align: center;
+  justify-self: center;
+  background-color: #26b6e3;
+  padding: 12px 40px;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  font-size: 1.25rem;
+  grid-column: 1/-1;
+  letter-spacing: 1.5px;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.action:hover {
+  box-shadow: 0px 0px 10px #26b6e3;
+}
+
+.action.disabled {
+  background-color: #c9c9c9;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .action {
+    margin-top: 2.38vh;
+    font-size: 2rem;
+    padding: 12px 40px;
+  }
+}
+
+/* End Quiz  */
+
+.quiz-results {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+
+.quiz-end {
+  font-size: min(11vw, 3rem);
+}
+
+.score {
+  margin-top: 15.5vh;
+  color: #26b6e3;
+  text-align: center;
+  margin-bottom: 10.5vh;
+}
+
+.restart-bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  width: min(79vw, 340px);
+  height: min(79vw, 340px);
+  background-color: #26b6e3;
+  border-radius: 100%;
+  box-shadow: 0 0 40px 0 #26b6e3;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .score {
+    margin-top: 14.2vh;
+    margin-bottom: 7vh;
+    font-size: 6rem;
+  }
+
+  .restart-bubble {
+    width: 47vh;
+    height: 47vh;
+    font-size: 4rem;
+  }
+}
